@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.xiyan.testapplication.DBActivity"
+    tools:showIn="@layout/activity_db"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.08"
+            android:background="#ECF5FF">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="查询（姓名）："
+                android:id="@+id/search"
+                android:paddingLeft="@dimen/activity_horizontal_margin"/>
+
+            <EditText
+                android:id="@+id/searchvalue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.08"
+            android:background="#ECF5FF">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="查询（年龄）："
+                android:id="@+id/searchage"
+                android:paddingLeft="@dimen/activity_horizontal_margin"/>
+
+            <EditText
+                android:id="@+id/searchagevalue"
+                android:digits="0123456789"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.12"
+            android:gravity="right">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="联合查询"
+                android:id="@+id/searchdoub"
+                android:typeface="sans"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="数据查询"
+                android:id="@+id/searchbt"
+                android:gravity="center"
+                android:typeface="serif"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.08"
+            android:layout_marginTop="40px">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="ID："
+                android:id="@+id/id"
+                android:paddingLeft="@dimen/activity_horizontal_margin"/>
+
+            <EditText
+                android:id="@+id/idvalue"
+                android:editable="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="数据库子增ID值"
+                android:textSize="24px"
+                android:textColor="#2828FF"
+                android:textStyle="italic"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.08">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="姓名："
+                android:id="@+id/name" />
+
+            <EditText
+                android:id="@+id/namevalue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.14">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="年龄："
+                android:id="@+id/age" />
+
+            <EditText
+                android:id="@+id/agevalue"
+                android:digits="0123456789"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.14">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="性别："
+                android:id="@+id/sex" />
+
+            <EditText
+                android:id="@+id/sexvalue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.14">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="出生年月："
+                android:id="@+id/birth" />
+
+            <EditText
+                android:id="@+id/birthvalue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.14">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="备注："
+                android:id="@+id/other" />
+
+            <EditText
+                android:id="@+id/othervalue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.12"
+            android:gravity="right"
+            >
+
+
+            <Button
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:textSize="22px"
+                android:text="保存记录"
+                android:id="@+id/save"
+
+                android:typeface="monospace"/>
+
+            <Button
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:text="修改记录"
+                android:textSize="22px"
+                android:id="@+id/updatebt"
+                android:typeface="monospace"/>
+
+
+            <Button
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:text="删除记录"
+                android:textSize="22px"
+                android:id="@+id/deletebt"
+                android:typeface="monospace"/>
+
+            <Button
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:text="删除表"
+                android:textSize="22px"
+                android:id="@+id/deleteTabbt"
+                android:typeface="monospace"/>
+
+            <Button
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:text="新增表"
+                android:textSize="22px"
+                android:id="@+id/createbt"
+                android:typeface="monospace"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
