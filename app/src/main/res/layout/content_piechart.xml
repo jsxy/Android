@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.xiyan.testapplication.chart.PiechartActivity"
+    tools:showIn="@layout/activity_piechart">
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="饼图参数配置"
+                        android:textStyle="bold"
+                        android:textSize="34px"
+                        android:gravity="center"
+                        android:id="@+id/IntroduceView" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="title参数配置："
+                        android:layout_marginTop="30px"
+                        android:textSize="30px"
+                        android:id="@+id/titleView" />
+                    <TableRow>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="24px"
+                            android:layout_gravity="center"
+                            android:text="setTitle(空/不空)："
+                            android:id="@+id/setTitleView" />
+                        <EditText
+                            android:id="@+id/setTitleEdit"
+                            android:layout_width="120px"
+                            android:ellipsize="start"
+                            android:singleLine="true"
+                            android:textSize="20px"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="24px"
+                            android:text="TextSize(float)："
+                            android:layout_gravity="center"
+                            android:id="@+id/TextSizeView" />
+                        <EditText
+                            android:id="@+id/TextSizeEdit"
+                            android:layout_width="120px"
+                            android:textSize="20px"
+                            android:layout_height="wrap_content" />
+                    </TableRow>
+                    <TableRow>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="24px"
+                            android:layout_gravity="center"
+                            android:text="TextColor(int)："
+                            android:id="@+id/TextColorView" />
+                        <EditText
+                            android:id="@+id/TextColorEdit"
+                            android:layout_width="120px"
+                            android:hint="0xFFFF0000(Color.RED)"
+                            android:textSize="24px"
+                            android:editable="false"
+                            android:text="0xFFFF0000(Color.RED)"
+                            android:textColor="@color/colorHui"
+                            android:layout_height="wrap_content"
+                            android:layout_span="3"/>
+                    </TableRow>
+                    <TableRow>
+                        <TextView
+                            android:layout_width="150px"
+                            android:layout_height="wrap_content"
+                            android:textSize="24px"
+                            android:text="TitlePosition："
+                            android:layout_gravity="center"
+                            android:id="@+id/PositionView" />
+                        <RadioGroup
+                            android:id="@+id/TitlePosition"
+                            android:layout_width="200px"
+                            android:layout_span="3"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <RadioButton
+                                android:id="@+id/title_top"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="top"
+                                android:checked="true"
+                                android:textSize="18px"/>
+                            <RadioButton
+                                android:id="@+id/title_bottom"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="bottom"
+                                android:textSize="18px"/>
+                        </RadioGroup>
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="titleCenter参数配置："
+                        android:layout_marginTop="30px"
+                        android:textSize="30px"
+                        android:id="@+id/titleCenterView" />
+                    <TableRow>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="24px"
+                            android:layout_gravity="center"
+                            android:text="CenterTitle："
+                            android:id="@+id/setCenterTitleView" />
+                        <EditText
+                            android:id="@+id/setCenterTitleEdit"
+                            android:layout_width="120px"
+                            android:ellipsize="start"
+                            android:singleLine="true"
+                            android:textSize="20px"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="24px"
+                            android:text="TextCenterSize(float)："
+                            android:layout_gravity="center"
+                            android:id="@+id/TextCenterSizeView" />
+                        <EditText
+                            android:id="@+id/TextCenterSizeEdit"
+                            android:layout_width="120px"
+                            android:textSize="20px"
+                            android:layout_height="wrap_content" />
+                    </TableRow>
+                    <TableRow>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="24px"
+                            android:layout_gravity="center"
+                            android:text="TextCenterColor(int)："
+                            android:id="@+id/TextCenterColorView" />
+                        <EditText
+                            android:id="@+id/TextCenterColorEdit"
+                            android:layout_width="120px"
+                            android:hint="0xFFFF0000(Color.RED)"
+                            android:textSize="24px"
+                            android:editable="false"
+                            android:text="0xFFFF0000(Color.RED)"
+                            android:textColor="@color/colorHui"
+                            android:layout_height="wrap_content"
+                            android:layout_span="3"/>
+                    </TableRow>
+
+                </TableLayout>
+            </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20px">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="animate配置（int）："
+                android:id="@+id/animateView"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="150px"
+                    android:layout_height="wrap_content"
+                    android:text="animateX："
+                    android:gravity="right"
+                    android:textSize="24px"
+                    android:id="@+id/animateXView"/>
+
+                <EditText
+                    android:id="@+id/animateXEdit"
+                    android:layout_width="80px"
+                    android:ellipsize="start"
+                    android:singleLine="true"
+                    android:textSize="20px"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="150px"
+                    android:layout_height="wrap_content"
+                    android:text="animateY："
+                    android:textSize="24px"
+                    android:gravity="right"
+                    android:id="@+id/animateYView"/>
+
+                <EditText
+                    android:id="@+id/animateYEdit"
+                    android:layout_width="80px"
+                    android:ellipsize="start"
+                    android:singleLine="true"
+                    android:textSize="20px"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20px">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="饼图中心配置："
+                android:id="@+id/HoleView"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="200px"
+                    android:layout_height="wrap_content"
+                    android:text="内圈是否显示："
+                    android:gravity="right"
+                    android:textSize="24px"
+                    android:id="@+id/HoleEnabledView"
+                    android:layout_gravity="center_vertical" />
+
+                <RadioGroup
+                    android:id="@+id/HoleEnabledEdit"
+                    android:layout_width="500px"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <RadioButton
+                        android:id="@+id/HoleEnabledEdit_true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="true"
+                        android:checked="true"
+                        android:textSize="18px"/>
+                    <RadioButton
+                        android:id="@+id/HoleEnabledEdit_false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="false"
+                        android:textSize="18px"/>
+                </RadioGroup>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="200px"
+                    android:layout_height="wrap_content"
+                    android:text="内圈半径(float)："
+                    android:textSize="24px"
+                    android:gravity="right"
+                    android:id="@+id/HoleRadiusView"/>
+
+                <EditText
+                    android:id="@+id/HoleRadiusEdit"
+                    android:layout_width="80px"
+                    android:ellipsize="start"
+                    android:singleLine="true"
+                    android:textSize="20px"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="150px"
+                    android:layout_height="wrap_content"
+                    android:text="内圈颜色："
+                    android:textSize="24px"
+                    android:gravity="right"
+                    android:id="@+id/HoleColorView"/>
+
+                <EditText
+                    android:id="@+id/HoleColorEdit"
+                    android:layout_width="150px"
+                    android:ellipsize="start"
+                    android:singleLine="true"
+                    android:textSize="20px"
+                    android:editable="false"
+                    android:textColor="@color/colorHui"
+                    android:text="Color.WHITE"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/createbt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:text="生成饼图"/>
+            </LinearLayout>
+
+
+
+            <com.supconit.azpt.chart.charts.PieChart
+                android:id="@+id/pieChart"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"></com.supconit.azpt.chart.charts.PieChart>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/refreshbt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/pieChart"
+                    android:text="重置饼图"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</RelativeLayout>

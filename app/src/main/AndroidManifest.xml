@@ -4,6 +4,10 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
     <application
         android:name="com.supconit.azpt.lib.AZPTApplication"
         android:allowBackup="true"
@@ -34,17 +38,47 @@
             android:label="@string/title_activity_network"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".TestActivity"
-            android:label="@string/title_activity_test"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".ChartActivity"
             android:label="@string/title_activity_chart"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".LogActivity"
             android:label="@string/title_activity_log"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".chart.LinechartActivity"
+            android:label="@string/title_activity_linechart"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".chart.BarchartActivity"
+            android:label="@string/title_activity_barchart"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".chart.PiechartActivity"
+            android:label="@string/title_activity_piechart"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ImageActivity"
+            android:label="@string/title_activity_image"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Image.ListImageActivity"
+            android:label="@string/title_activity_list_image"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Image.GridImageActivity"
+            android:label="@string/title_activity_grid_image"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".TabActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".widget.GestureLockActivity"></activity>
+
+        <activity android:name=".widget.SearchViewActivity"/>
     </application>
 
 </manifest>

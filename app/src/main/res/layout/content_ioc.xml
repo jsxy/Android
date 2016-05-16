@@ -93,81 +93,96 @@
         android:layout_below="@id/imageView1"
         android:layout_marginTop="20px"/>
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="用户名："
-            android:id="@+id/nameView"
-            android:layout_below="@id/textView1"
-            android:layout_margin="@dimen/activity_vertical_margin"/>
-        <EditText
+        android:orientation="vertical"
+        android:background="@drawable/layoutbg">
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/editname"
-            android:layout_gravity="center_horizontal" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="密码："
-            android:id="@+id/passwdView"
-            android:layout_below="@id/textView1"
-            android:layout_margin="@dimen/activity_vertical_margin"/>
-
-        <EditText
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="用户名："
+                android:id="@+id/nameView"
+                android:layout_below="@id/textView1"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:layout_margin="@dimen/activity_vertical_margin"/>
+            <EditText
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:inputType="textPersonName"
+                android:id="@+id/editname"/>
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:ems="10"
-            android:id="@+id/editpasswd"
-            android:layout_gravity="center_horizontal" />
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="密    码："
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:id="@+id/passwdView"
+                android:layout_margin="@dimen/activity_vertical_margin"/>
+            <EditText
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:inputType="textPassword"
+                android:id="@+id/editpasswd"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="right"
+            android:layout_marginRight="40px"
+            android:layout_marginTop="10px">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/Viewremember"
+                android:textSize="6pt"
+                android:text="是否记住密码："
+                android:layout_margin="10px" />
+
+            <RadioGroup
+                android:id="@+id/gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+                <RadioButton
+                    android:id="@+id/radiotrue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是"
+                    android:textSize="6pt"
+                    android:checked="true" />
+                <RadioButton
+                    android:id="@+id/radiofalse"
+                    android:textSize="6pt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="否" />
+            </RadioGroup>
+        </LinearLayout>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="right"
-        android:layout_marginRight="40px"
-        android:layout_marginTop="10px">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/Viewremember"
-            android:text="是否记住密码："
-            android:layout_margin="10px" />
-
-        <RadioGroup
-            android:id="@+id/gender"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-            <RadioButton
-                android:id="@+id/radiotrue"
-                android:text="是"
-                android:checked="true" />
-            <RadioButton
-                android:id="@+id/radiofalse"
-                android:text="否" />
-        </RadioGroup>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         android:orientation="horizontal"
         android:gravity="right">
 
@@ -179,13 +194,13 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="注册"
+            android:text="取消"
             android:id="@+id/buttonsave2"
             android:layout_below="@id/buttonsave1"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="取消"
+            android:text="系统提示"
             android:id="@+id/buttonsave3"
             android:layout_below="@id/buttonsave2"
             />

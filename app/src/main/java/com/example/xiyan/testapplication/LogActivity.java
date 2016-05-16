@@ -41,7 +41,7 @@ public class LogActivity extends Activity {
     @AZView
     private Prompt prompt;
 
-    private Level level= Level.DEBUG;
+    private Level level= Level.ERROR;
 
     private DateEnum dateEnum= DateEnum.MINUTE;
 
@@ -52,6 +52,7 @@ public class LogActivity extends Activity {
 
     @AZAfter
     public void init(){
+        LogUtil.setLogFilePath(this);
         radioGroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -130,6 +131,9 @@ public class LogActivity extends Activity {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
+                    case R.id.rb_1:
+                        maxBackupIndex = -2;
+                        break;
                     case R.id.rb_0:
                         maxBackupIndex = 0;
                         break;
@@ -206,7 +210,7 @@ public class LogActivity extends Activity {
 
     @AZListener(R.id.bt_file)
     public void file(View view) throws IOException {
-        AndroidLog androidLog1 = LogUtil.getAndroidLogFile(LogActivity.class, level);
+        AndroidLog androidLog1 = LogUtil.getAndroidLogFile(LogActivity.class);
         androidLog1.trace(editText.getText().toString(), false, null);
         androidLog1.debug(editText.getText().toString(), false, null);
         androidLog1.info(editText.getText().toString(), false, null);
@@ -215,8 +219,43 @@ public class LogActivity extends Activity {
         androidLog1.fatal(editText.getText().toString(), false, null);
     }
 
+
+    @AZListener(R.id.bt_file_level)
+    public void file_level(View view) throws IOException {
+        AndroidLog androidLog1 = LogUtil.getAndroidLogFile(LogActivity.class, level);
+        androidLog1.debug(editText.getText().toString(), false, null);
+        androidLog1.info(editText.getText().toString(), false, null);
+        androidLog1.warn(editText.getText().toString(), false, null);
+        androidLog1.error(editText.getText().toString(), false, null);
+        androidLog1.fatal(editText.getText().toString(), false, null);
+    }
+
+    @AZListener(R.id.bt_file_patternLayout)
+    public void file_patternLayout(View view) throws IOException {
+        AndroidLog androidLog1 = LogUtil.getAndroidLogFile(LogActivity.class, "%d [%t]  %c  %x %p %r %l  %n  - %m%n",level.TRACE);
+        androidLog1.trace(editText.getText().toString(), false, null);
+        androidLog1.debug(editText.getText().toString(), false, null);
+        androidLog1.info(editText.getText().toString(), false, null);
+        androidLog1.warn(editText.getText().toString(), false, null);
+        androidLog1.error(editText.getText().toString(), false, null);
+        androidLog1.fatal(editText.getText().toString(), false, null);
+    }
+
+
+
     @AZListener(R.id.bt_datefile)
     public void dateFile(View view) throws IOException {
+        AndroidLog androidLog1 = LogUtil.getAndroidLogDateFile(LogActivity.class, dateEnum);
+        androidLog1.trace(editText.getText().toString(), false, null);
+        androidLog1.debug(editText.getText().toString(), false, null);
+        androidLog1.info(editText.getText().toString(), false, null);
+        androidLog1.warn(editText.getText().toString(), false, null);
+        androidLog1.error(editText.getText().toString(), false, null);
+        androidLog1.fatal(editText.getText().toString(), false, null);
+    }
+
+    @AZListener(R.id.bt_datefile_level)
+    public void dateFile_level(View view) throws IOException {
         AndroidLog androidLog1 = LogUtil.getAndroidLogDateFile(LogActivity.class, level, dateEnum);
         androidLog1.trace(editText.getText().toString(), false, null);
         androidLog1.debug(editText.getText().toString(), false, null);
@@ -225,30 +264,30 @@ public class LogActivity extends Activity {
         androidLog1.error(editText.getText().toString(), false, null);
         androidLog1.fatal(editText.getText().toString(), false, null);
 
-        try {
-            Thread.sleep(60000);
-            androidLog1.trace(editText.getText().toString(), false, null);
-            androidLog1.debug(editText.getText().toString(), false, null);
-            androidLog1.info(editText.getText().toString(), false, null);
-            androidLog1.warn(editText.getText().toString(), false, null);
-            androidLog1.error(editText.getText().toString(), false, null);
-            androidLog1.fatal(editText.getText().toString(), false, null);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
+
+    @AZListener(R.id.bt_datefile_patternLayout)
+    public void dateFile_patternLayout(View view) throws IOException {
+        AndroidLog androidLog1 = LogUtil.getAndroidLogDateFile(LogActivity.class, "%d [%t]  %c  %x %p %r %l  %n  - %m%n",level, dateEnum);
+        androidLog1.trace(editText.getText().toString(), false, null);
+        androidLog1.debug(editText.getText().toString(), false, null);
+        androidLog1.info(editText.getText().toString(), false, null);
+        androidLog1.warn(editText.getText().toString(), false, null);
+        androidLog1.error(editText.getText().toString(), false, null);
+        androidLog1.fatal(editText.getText().toString(), false, null);
+
+    }
+
 
     @AZListener(R.id.bt_sizefile)
     public void sizefile(View view) throws IOException {
         AndroidLog androidLog1 = LogUtil.getAndroidLogSizeFile(LogActivity.class, level, maxSizeFile, maxBackupIndex);
-        for(int i=0;i<30;i++){
             androidLog1.trace(editText.getText().toString(), false, null);
             androidLog1.debug(editText.getText().toString(), false, null);
             androidLog1.info(editText.getText().toString(), false, null);
             androidLog1.warn(editText.getText().toString(), false, null);
             androidLog1.error(editText.getText().toString(), false, null);
             androidLog1.fatal(editText.getText().toString(), false, null);
-        }
     }
 
     @AZListener(R.id.bt_delete)
@@ -269,25 +308,10 @@ public class LogActivity extends Activity {
 
     @AZListener(R.id.bt_http)
     public void http(View view){
-       /* LogTransfer.setUrl("http://192.168.42.4:8080/z_web_test/test_logMsg.action");
-        AndroidLog androidLog1= LogUtil.getAndroidLogger(LogActivity.class,level);
-        boolean result = androidLog1.fatal(editText.getText().toString(), true, null);
-        if(result){
-            Toast.makeText(LogActivity.this, "上传服务器成功", Toast.LENGTH_LONG).show();
-        }*/
-
-       /* LogTransfer.setUrl("http://192.168.42.4:8080/z_web_test/test_logFile.action");
-        int result = LogTransfer.sendLogFile();
-        if(result == 0){
-            Toast.makeText(LogActivity.this, "上传服务器成功", Toast.LENGTH_LONG).show();
-        }*/
 
 
-        LogSender.configURL("http://172.19.10.18:8080/z_web_test/test_logFile.action");
-       /* int result = LogSender.sendLogFile();
-        if(result == 0){
-            Toast.makeText(LogActivity.this, "上传服务器成功", Toast.LENGTH_LONG).show();
-        }*/
+        LogSender.configURL("http://172.19.10.18:8080/z_web_test/test_upload.action");
+
         Toast.makeText(LogActivity.this, "上传服务器成功", Toast.LENGTH_LONG).show();
 
 

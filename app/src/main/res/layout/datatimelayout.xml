@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/home_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="时间控件"
+        android:textSize="24dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10pt">
+        <TextView
+            android:id="@+id/dataonly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="时间："
+            android:textSize="16sp"/>
+        <EditText
+            android:id="@+id/dataonly_Edit"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"/>
+        <Button
+            android:id="@+id/show_dataonly"
+            android:layout_width="55dp"
+            android:layout_height="40dp"
+            android:text="选择"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10pt">
+        <TextView
+            android:id="@+id/timeonly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="日期："
+            android:textSize="16sp"/>
+        <EditText
+            android:id="@+id/timeonly_Edit"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"/>
+        <Button
+            android:id="@+id/show_timeonly"
+            android:layout_width="55dp"
+            android:layout_height="40dp"
+            android:text="选择"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/selectView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="下拉框控件"
+        android:textSize="24dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10pt">
+        <TextView
+            android:id="@+id/selectonly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="所属地点："
+            android:textSize="16sp"/>
+        <EditText
+            android:id="@+id/selectonly_Edit"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"/>
+        <Button
+            android:id="@+id/show_selectonly"
+            android:layout_width="55dp"
+            android:layout_height="40dp"
+            android:text="选择"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>

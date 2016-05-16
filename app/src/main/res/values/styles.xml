@@ -7,6 +7,11 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <!--&lt;!&ndash; ActionBar 样式 &ndash;&gt;-->
+    <!--<style name="MyActionBar"-->
+    <!--parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">-->
+    <!--<item name="android:background">@color/colorHui</item>-->
+    <!--</style>-->
 
     <style name="NumberProgressBar_Default">
         <item name="android:layout_height">wrap_content</item>

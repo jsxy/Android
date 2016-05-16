@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical">
+
+    <ImageView
+        android:id="@+id/imageItem"
+        android:layout_width="10dp"
+        android:layout_height="80dp"
+        android:padding="3dp"
+        android:layout_weight="3"/>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="7"
+        android:padding="3dp" >
+        <TextView
+            android:id="@+id/textItem1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            android:text="图片大标题"/>
+        <TextView
+            android:id="@+id/textItem2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="8dp"
+            android:text="小标题：今天是星期五，马上就可以放假了"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

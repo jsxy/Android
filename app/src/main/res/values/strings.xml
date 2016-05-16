@@ -7,4 +7,18 @@
     <string name="title_activity_test">TestActivity</string>
     <string name="title_activity_chart">ChartActivity</string>
     <string name="title_activity_log">LogActivity</string>
+    <string name="title_activity_linechart">LinechartActivity</string>
+    <string name="title_activity_barchart">BarchartActivity</string>
+    <string name="title_activity_piechart">PiechartActivity</string>
+    <string name="hintedit_message">请输入内容</string>
+    <string name="title_activity_image">ImageActivity</string>
+    <string name="title_activity_list_image">ListImageActivity</string>
+    <string name="title_activity_grid_image">GridImageActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
+
+
+    <string-array name="select_sex">
+        <item>男</item>
+        <item>女</item>
+    </string-array>
 </resources>

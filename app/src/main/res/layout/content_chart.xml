@@ -12,4 +12,8 @@
     tools:context="com.example.xiyan.testapplication.ChartActivity"
     tools:showIn="@layout/activity_chart">
 
+    <ListView
+        android:id="@+id/lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></ListView>
 </RelativeLayout>

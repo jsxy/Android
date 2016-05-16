@@ -212,7 +212,7 @@ public class DBActivity extends AppCompatActivity {
             //List<Person> persons = dbUtil.findCondition(Person.class, condition, null);
 //            List<Person> persons = dbUtil.findCondition(Person.class, null, column);
             //List<Person> persons = dbUtil.findCondition(Person.class, condition, column);
-           List<Person> persons = dbUtil.findCondition(Person.class, null, column);
+           List<Person> persons = dbUtil.findCondition(Person.class, null);
             for (Person son: persons){
                 str += "Id："+son.getId()+" \t name："+son.getName()+" \t age："+son.getAge()+"  \t sex："+son.getSex()+ "  \t birth："+dateFormat.format(son.getBirth())+  " \t other："+son.getOther()+ " \n";
             }

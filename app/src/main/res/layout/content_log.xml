@@ -38,15 +38,123 @@
                     android:text="日志内容：" />
                 <EditText
                     android:id="@+id/et_msg"
-                    android:layout_width="200dp"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content" />
+                <Button
+                    android:id="@+id/bt_console"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80px"
+                    android:textSize="26px"
+                    android:text="控制台日志"
+                    android:allowUndo="true" />
             </LinearLayout>
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="180px"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:layout_gravity="left">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="测试getAndroidLogFile方法："
+                android:id="@+id/LogFile"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:gravity="left">
+                <Button
+                    android:id="@+id/bt_file"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="20px"
+                    android:text="日志文件(class)"/>
+
+                <Button
+                    android:id="@+id/bt_file_level"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="20px"
+                    android:layout_marginLeft="20px"
+                    android:text="日志文件(level)"/>
+
+                <Button
+                    android:id="@+id/bt_file_patternLayout"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="20px"
+                    android:layout_marginLeft="20px"
+                    android:text="日志文件(patternLayout)"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="180px"
+            android:orientation="vertical"
+            android:layout_gravity="left">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="测试getAndroidLogDateFile方法："
+                android:id="@+id/LogDateFile"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:gravity="left">
+                <Button
+                    android:id="@+id/bt_datefile"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="20px"
+                    android:text="日期文件(time)"/>
+
+                <Button
+                    android:id="@+id/bt_datefile_level"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="20px"
+                    android:layout_marginLeft="20px"
+                    android:text="日期文件(level)"/>
+
+                <Button
+                    android:id="@+id/bt_datefile_patternLayout"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="20px"
+                    android:layout_marginLeft="20px"
+                    android:text="日期文件(patternLayout)"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="left">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="getAndroidLogSizeFile自由配置日志参数："
+                android:id="@+id/LogConfigure"
+                android:gravity="left"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="20dp"
                 android:gravity="center">
                 <RadioGroup
                     android:id="@+id/radioGroup1"
@@ -170,6 +278,13 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
                     <RadioButton
+                        android:id="@+id/rb_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-1"
+                        android:checked="true"
+                        android:textSize="18px"/>
+                    <RadioButton
                         android:id="@+id/rb_0"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -200,11 +315,6 @@
                         android:layout_height="wrap_content"
                         android:text="10"
                         android:textSize="18px"/>
-                    <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="..."
-                        android:textSize="18px"/>
                 </RadioGroup>
             </LinearLayout>
         </LinearLayout>
@@ -212,76 +322,30 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal"
-            android:layout_gravity="left">
-
-            <Button
-                android:id="@+id/bt_console"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:text="控制台日志"/>
-
-            <Button
-                android:id="@+id/bt_file"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_weight="1"
-                android:text="日志文件"/>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/bt_datefile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
-                android:text="按时间生成日志文件"/>
             <Button
                 android:id="@+id/bt_sizefile"
-                android:layout_width="wrap_content"
+                android:layout_width="200px"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
+                android:textSize="24px"
                 android:text="按大小生成日志文件"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
             <Button
                 android:id="@+id/bt_delete"
-                android:layout_width="wrap_content"
+                android:layout_width="200px"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
+                android:textSize="24px"
+                android:layout_marginLeft="20px"
                 android:text="删除当前日志文件"/>
             <Button
                 android:id="@+id/bt_deleteall"
-                android:layout_width="wrap_content"
+                android:layout_width="200px"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
+                android:textSize="24px"
+                android:layout_marginLeft="20px"
                 android:text="删除全部日志文件"/>
 
         </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
